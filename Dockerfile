@@ -7,7 +7,7 @@ ENV ALPINE_GLIBC_PACKAGE_VERSION="2.29-r0"
 ENV ALPINE_GLIBC_REL_URL=${ALPINE_GLIBC_BASE_URL}/${ALPINE_GLIBC_PACKAGE_VERSION}
 
 
-RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
+RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates bash && \
 	wget -q -O /etc/apk/keys/sgerrand.rsa.pub ${ALPINE_GLIBC_SOURCE_RSA_PUB_URL} && \
 	wget ${ALPINE_GLIBC_REL_URL}/glibc-2.29-r0.apk && \
 	wget ${ALPINE_GLIBC_REL_URL}/glibc-bin-2.29-r0.apk && \
@@ -20,4 +20,5 @@ RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
 	echo "export LANG=en_US" > /etc/profile.d/locale.sh && \
 	apk del .build-dependencies && \
 	rm *.apk && \
-	rm "/root/.wget-hsts"
+	rm "/root/.wget-hsts" && \
+	apk add bash
