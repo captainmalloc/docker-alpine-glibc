@@ -1,6 +1,6 @@
 # Alpine 3.9 with Glibc
 
-This small project is for building a custom Docker image based from Alpine 3.9
+This small project is for building a custom Docker image based on Alpine 3.9
 with Glibc and *C.UTF-8* locale setup.
 
 This image is based on the work done by
@@ -24,6 +24,10 @@ docker pull captainmalloc/alpine_glibc
 ```
 
 ## Release Notes
+
+### Patch 2 (2019-05-08)
+
+Fix environement and avoid LANG setup dependency from  login shell
 
 ### Patch 1 (2019-05-08)
 
