@@ -25,10 +25,10 @@ docker pull captainmalloc/alpine_glibc
 
 ## Release Notes
 
-### Version 1.1 (2019-05-08)
+### Patch 1 (2019-05-08)
 
 Adds Bash in base install
 
-### Version 1.0 (2019-05-08)
+### Initial Revision (2019-05-08)
 
 Alpine 3.9 + Glibc 2.29-r0
